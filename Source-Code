@@ -1,0 +1,72 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+contract broker {
+    address ownner;
+    constructor(){
+        ownner= msg.sender;
+        for(uint i =0; i<list.length; i++){
+         listings[i]=list[i];
+
+        }
+     }
+     struct lsiting{
+        string name;
+        uint256 uid;
+     }
+     mapping(uint256 => string) listings;
+     string[10] private  list = [
+        "AAPL",
+        "MSFT",
+        "GOOGL",
+        "AMZN",
+        "TSLA",
+        "META",
+        "NFLX",
+        "NVDA",
+        "BABA",
+        "JPM"
+    ];
+    event RangeValue(string value);
+  function checkStatus(string memory _name) public view returns(string memory) {
+        for(uint i = 0; i < list.length; i++) {
+            if(keccak256(bytes(_name)) == keccak256(bytes(list[i]))) {
+                return "available"; 
+            }
+        }
+        return "not available"; 
+    }
+    function range(uint _range) public{
+      
+      for(uint i=0; i<_range; i++){
+         require(_range< list.length, "out of bound");
+         emit RangeValue(list[i]);
+        
+
+      }
+    }
+}
+
+
+
+
+      
+   
+
+    
+    
+
+      
+
+     
+
+
+
+
+   
+
+
+
+
+   
+
