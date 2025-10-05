@@ -1,23 +1,30 @@
-SimpleStockBroker
-A simple Solidity smart contract that manages a list of popular stock symbols. Users can check if a stock is available and emit events for a range of stocks. Perfect for learning basic listing management on Ethereum.
+# 📈 SimpleStockBroker
 
-**Features**
-check if a stock symbol is available
-Emit events for a range of listings
+**SimpleStockBroker** is a lightweight Solidity smart contract that manages a list of popular stock symbols on Ethereum.  
 
-**Predefined stock list: AAPL, MSFT, GOOGL, AMZN, TSLA, META, NFLX, NVDA, BABA, JPM
-**
+It’s perfect for beginners who want to learn **basic listing management**, event emission, and ownership in smart contracts.
 
-Records the contract owner
+---
 
-**Usage**
-Deploy the contract
+## ✅ Features
 
-1. Call checkStatus("AAPL") → returns "available" or "not available"
+- Check if a stock symbol is available  
+- Emit events for a range of stock listings  
+- Tracks the **contract owner**  
 
-2. Call range(5) → emits events for the first 5 stock symbols
+---
 
-**Event**
-1. RangeValue(string value) – emitted for each stock in the range
+## 📊 Predefined Stock List
+AAPL, MSFT, GOOGL, AMZN, TSLA, META, NFLX, NVDA, BABA, JPM
 
-License: MIT
+
+
+---
+
+## 🚀 Usage
+
+1. **Deploy** the contract  
+2. **Check stock availability**  
+```solidity
+checkStatus("AAPL")  // returns "available" or "not available"
+
